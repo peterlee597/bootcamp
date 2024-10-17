@@ -26,17 +26,15 @@
             //return the year that the user was released
             function findReleaseDate(movie){
                 $.getJSON(URL, function(data){
-                    for(var i = 0; i < data.objects.length;i++){
-                        if (data.objects[i].name.toLowerCase() === movie.toLowerCase()){
-                            var date = data.objects[i].release-date;
+                    console.log("this is my data", data);
+                    for(var i = 0; i <data.length ; i++){
+                        if(data[i].name === movie){
+                            $("#release-date").append("Release Date:"+data[i]["release-date"]);
                         }
                     }
-                    $("#release-date").text(date);
-                })
                
+            })
             }
-            
-            
             
         </script>
     </body>
