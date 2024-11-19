@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movies</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <h3>Enter a movie:</h3>
+        <input type = "text" id = "movie">
+        <button id = "search">Search</button>
+        <h5 id = "release-date"></h5>
+        <script>
+            var URL = "https://static.codehs.com/api/12345/movies/all";
+            //When the user clicks the search button, the year of the movie was released
+            //should be appeneded to the element with the id release=date.
+            //store the user submited movie that needs to be searched
+            
+            $("#search").click(function(){
+                 var movie = $("#movie").val();
+                findReleaseDate(movie);
+            });
+            
+            
+            //Create a function that filters through the dataset to find the correct movie.
+            //return the year that the user was released
+            function findReleaseDate(movie){
+                $.getJSON(URL, function(data){
+                    console.log("this is my data", data);
+                    for(var i = 0; i <data.length ; i++){
+                        if(data[i].name === movie){
+                            $("#release-date").append("Release Date:"+data[i]["release-date"]);
+                        }
+                    }
+               
+            })
+            }
+            
+        </script>
+    </body>
+</html>

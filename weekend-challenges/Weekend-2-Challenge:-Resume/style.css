@@ -1,0 +1,168 @@
+/* General Styling of Resume*/
+body{
+    background-color:#DCF4EF;
+}
+.important-information{
+    font-size: 50px;
+    font-family:"Times New Roman";
+    text-align:center;
+    color:teal;
+    border-top:dotted 2px black;
+    border-color:black;
+    padding: 5px;
+}
+#name{
+    font-size: 50px;
+    font-family:"Times New Roman";
+    text-align:center;
+    color:tan;
+}
+li{
+    font-size: 20px;
+    font-family:"Times New Roman";
+}
+#address{
+    font-size:20px;
+    font-family:"Times New Roman";
+    font-style:italic;
+    text-align:center;
+    font-weight:normal;
+    color:palevioletred;
+}
+/* All Styling for education tab*/
+#education:hover{
+    font-size:60px;
+}
+
+#educationInfo{
+    position: 50%;
+    display:none;
+    text-align:left;
+}
+#hs{
+    color:black;
+}
+#undergradInfo{
+    color:blue;
+}
+.studies{
+    color:black;
+    font-style:italic;
+    display:none;
+}
+
+/* All Styling for Work Experience Tab*/
+#workInfo{
+    display:none;
+    text-align:left;
+    color:black;
+    
+}
+#work-experience:hover{
+    font-size:60px;
+}
+
+#wakaiInfo{
+    display:none;
+    font-style:italic;
+    color:black;
+}
+#wakai{
+    color:blue;
+}
+#mnsuswInfo{
+    display:none;
+    font-style:italic;
+    color:black;
+}
+#mnsusw{
+    color:blue;
+}
+#mnsussInfo{
+    display:none;
+    font-style:italic;
+    color:black;
+}
+#mnsuss{
+    color:blue;
+}
+#internshipInfo{
+    display:none;
+    font-style:italic;
+    color:black;
+}
+#internship{
+    color:blue;
+}
+/*all Styling for the Extracuriculars tab*/
+#extracuricular:hover{
+    font-size:60px;
+}
+
+#eaInfo{
+    display:none;
+    text-align:left;
+    color:black;
+}
+#hsa{
+    text-align:left;
+    color:blue;
+}
+#hsaInfo{
+    display:none;
+    text-align:left;
+    font-style:italic;
+    color:black;
+}
+#aga{
+    text-align:left;
+    color:blue;
+}
+#agaInfo{
+    display:none;
+    text-align:left;
+    font-style:italic;
+    color:black;
+}
+#aaaCamp{
+    color:blue;
+}
+#aaaCampInfo{
+    display:none;
+    text-align:left;
+    font-style:italic;
+    color:black;
+}
+#summerCamp{
+    color:blue;
+}
+#summerCampInfo{
+    display:none;
+    text-align:left;
+    font-style:italic;
+    color:black;
+} 
+/* Awards CSS Styles */
+#awardsInfo{
+    display:none;
+    text-align:left;
+    color:black;
+}
+#awards:hover{
+    font-size:60px;
+}
+
+/* Hobbies CDD Styles */
+
+#hobbiesInfo{
+    text-align:left;
+    display:none;
+    color:black;
+}
+#hobbies:hover{
+    font-size:60px;
+}
+/* images animation */
+#imgOne{
+    position: relative;
+}

@@ -1,0 +1,2 @@
+module CategoryTwosHelper
+end

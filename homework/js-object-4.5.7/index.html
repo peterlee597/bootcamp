@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+
+	</head>
+
+	<body>
+	    <div id = container>
+    	    <h1>My Phonebook</h1>
+    	    <div id = button-container>
+        	    <button id = add>Add Contact</button>
+        	    <button id = retrieve>Retrieve Contact</button>
+    	    </div>
+    	    <div id = contact-reveal></div>
+	    </div>
+	    <script>
+	    
+	        if(localStorage.phonebook){
+	            var phonebook = JSON.parse(localStorage.phonebook);
+	        }
+	        else{
+	            var phonebook = [];
+	        }
+	        
+	        function addContact(){
+	            //prompt the user for their information
+	            var userFirstName = prompt("What is your name?");
+	            var userLastName = prompt("What is your last name?");
+	            var userNumber = prompt("What is your phone number?");
+	            // store user information in contact object
+	            var contact = {
+	                firstName: userFirstName,
+	                lastName: userLastName,
+	                number: userNumber
+	            };
+	            //save the contacts into the phonebook key
+	            localStorage.phonebook = JSON.stringify(contact);
+	        };
+	            // when button is clicked run function addContact
+	       $("#add").click(function(){
+	            addContact();
+	         });
+	            
+	        function contactExists(first, last)
+	        {
+	            var phonebook =JSON.parse(localStorage.phonebook);
+	            for(var i = 0 ; i <phonebook.length ; i++){
+	                if(first == phonebook[i].firstName && last == phonebook[i].lastName){
+	                    return true;
+	                }else{
+	                    return false;
+	                }
+	            }
+
+	        }
+	        
+	        function retrieveContact(first, last)
+	        {
+	            var phonebook = JSON.parse(localStorage.phonebook);
+	            for(var i = 0 ; i < phonebook.length ; i++){
+	                if(first == phonebook[i].firstName && last == phonebook[i].lastName){
+	                    $("#contact-reveal").append(phonebook[i].firstName + ":" + phonebook[i].lastName + ":" + phonebook[i].number);
+	                }
+	            }
+	        }
+	        $("#retrieve").click(function(){
+	            var firstName = prompt("What is your first name?");
+	            var lastName = prompt("What is your last name?");
+	            
+	            if(contactExists(firstName, lastName) ==true){
+	                retrieveContract(firstName,lastName);
+	            }else{
+	                var createNewContact = prompt("contact doesn't exist. Create a new one?");
+	                if(createNewContact.toLowerCase() == "yes"){
+	                    addContact();
+	                }else{
+	                    alert("exiting");
+	                }
+	            }
+	        })
+	    </script>
+	</body>
+</html>
