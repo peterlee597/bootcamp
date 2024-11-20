@@ -19,7 +19,10 @@
   </head>
 
   <body>
-     <%= yield %>
-     <%= yield :javascript %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
+    <%= yield %>
+    <%= yield :javascript %>
   </body>
 </html>
