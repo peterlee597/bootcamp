@@ -13,7 +13,7 @@
   <div id="card-element"><!-- Stripe will place the card input here --></div>
   </div> 
 
-  <button type="submit">Donate</button>
+  <button type="submit">Donate</button> <%= render "form", donation: @donation %>
 <% end %>
 </div>
 
@@ -24,8 +24,10 @@
     <%= form.email_field :email, class: 'form-control' %>
   </div>
 
+  
   <div class="form-group">
     <%= form.submit 'Confirm Email', class: 'btn btn-primary' %>
   </div>
 <br>
 <% end %>
+

@@ -1,0 +1,7 @@
+<%= form_with model: @donations do |form| %>
+  <div class="field">
+    <%= form.label :recurring, "Make this a monthly donation" %>
+    <%= form.check_box :recurring %>
+  </div>
+  <%= form.submit %>
+  <% end %>

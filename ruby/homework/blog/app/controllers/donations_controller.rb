@@ -1,7 +1,5 @@
 class DonationsController < ApplicationController
-  def new
-  end
-
+  
   def create
     Stripe::PaymentIntent.create({
       amount: (params[:amount].to_i * 100), # Amount in cents
@@ -14,5 +12,14 @@ class DonationsController < ApplicationController
     redirect_to root_path, notice: "Thank you for your donation!"
     rescue Stripe::CardError => e
     redirect_to new_donation_path, alert: e.message
+
+    Stripe::Subscription.create({
+      customer: users.id ,
+      items: [{ price: ENV['STRIPE_PRICE_ID'] }],
+    })
+    @donation.stripe_subscription_id = subscription.id
+    @donation.save!
   end
+
+
 end
